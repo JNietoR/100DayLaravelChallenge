@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         $title = fake()->sentence();
         return [
-            'tittle' => $title,
+            'title' => $title,
             'slug'=> strtolower(
                 str_replace(' ', '-', $title)
             ),
