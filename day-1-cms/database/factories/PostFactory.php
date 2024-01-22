@@ -16,8 +16,14 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $title = fake()->sentence();
         return [
-            //
+            'tittle' => $title,
+            'slug'=> strtolower(
+                str_replace(' ', '-', $title)
+            ),
+            'body' => fake()->text(),
+            //'type' => ['PAGE','POST'] lo asignamos desde el seed
         ];
     }
 }
