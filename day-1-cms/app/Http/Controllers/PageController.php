@@ -9,13 +9,13 @@ class PageController extends Controller
 {
     public function blog()
     {
-        $pages = Post::whereType('PAGE')->get();
-        $posts = Post::whereType('POST')->orderByDESC('id')->get();
+        $pages = Post::pages()->get();
+        $posts = Post::posts()->get();
         return view('blog', compact('pages', 'posts'));
     }
     public function post(Post $post)
     {
-        $pages = Post::whereType('type', 'PAGE')->get();
+        $pages = Post::pages()->get();
 
         return view('post', compact('pages', 'post'));
     }
