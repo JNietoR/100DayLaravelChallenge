@@ -12,20 +12,21 @@
 </head>
 
 <body>
-    <header class="p´3 text-bg-dark">
+    <header class="p-3 bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center">
                 <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center">
                     @foreach ($pages as $page)
                     <li>
-                        <a href="{{ route('post', $page->slug)}}"
+                        <a href="{{ route('post', $page->slug) }}"
                             class="
-                                nav-link px-2
-                                {{
-                                    request->is($page->slug) == $page->slug
-                                    ? 'text-secondary'
-                                    : 'text-white'
-                                }}"
+                                    nav-link px-2
+                                    {{
+                                        request()->is($page->slug) == $page->slug
+                                        ? 'text-secondary'
+                                        : 'text-white'
+                                    }}
+                                "
                         >{{ $page->title}}</a>
                     </li>
                     @endforeach
