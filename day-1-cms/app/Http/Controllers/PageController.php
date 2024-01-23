@@ -17,6 +17,6 @@ class PageController extends Controller
     {
         $pages = Post::whereType('type', 'PAGE')->get();
 
-        return view('blog', compact('pages', 'post'));
+        return view('post', compact('pages', 'post'));
     }
 }
